@@ -2,7 +2,7 @@
 
 # This slices out given tickers dates without resetting the index
 # There are other values lexically between AAPL and MSFT, but we're just selecting those
-
+# Context: all_data is a DataFrame with indices for ticker and date.
 
 
 # Selecting individual tickers and dates
@@ -13,7 +13,6 @@ all_data.loc[pd.IndexSlice[['AAPL','MSFT'],pd.date_range('2012-01-03','2012-01-0
 
 
 ## Slicing single value with .xs
-
 all_data.xs(('UAL','2012-01-03'),level=['Ticker','Date'], drop_level=False)
 
 
